@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YUVA Cognitive Arena</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div id="bg" class="bg-hub"></div>
+
+  <div class="container" id="hub">
+    <div class="header">
+      🧬 YUVA Cognitive Arena
+      <div id="profile"></div>
+    </div>
+
+    <div class="cards">
+      <div class="card" onclick="openMemoryTest()">
+        <h2>🧠 Memory Test</h2>
+        <p>Train your working memory</p>
+      </div>
+
+      <div class="card" onclick="openSpeedTest()">
+        <h2>⚡ Speed Test</h2>
+        <p>Boost reaction & focus</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="backBtn" class="sys-btn" onclick="goBack()">← Hub</button>
+  <button id="perfBtn" class="sys-btn" onclick="showPerformance()">📊 Performance</button>
+
+  <div id="performancePanel">
+    <h2>📈 Kartikam Pandey — Performance</h2>
+    <canvas id="graph" width="600" height="300"></canvas>
+    <div style="text-align:center;">
+      <button class="sys-btn" onclick="closePerformance()">Close Panel</button>
+    </div>
+  </div>
+
+  <div id="speedTestUI">
+    <div id="speedRules">
+      <div id="speedRuleText"></div>
+      <button id="speedStartBtn" class="sys-btn" style="display:none;">Start Speed Test</button>
+    </div>
+
+    <div id="speedGame">
+      <div class="speed-top">
+        <div id="speedLevel">Level: 1</div>
+        <div class="timer">
+          <svg width="120" height="120" aria-hidden="true">
+            <circle cx="60" cy="60" r="50"></circle>
+            <circle cx="60" cy="60" r="50" id="speedProgress"></circle>
+          </svg>
+          <span id="speedTime">7</span>
+        </div>
+        <div id="speedStreak">Streak: 0</div>
+      </div>
+      <div id="speedMessage"></div>
+      <div id="speedArrow">⬆️</div>
+      <div id="speedGrid"></div>
+    </div>
+  </div>
+
+  <div id="memoryTestUI">
+    <div id="memoryRules">
+      <div class="mem-rule-card">
+        <h2>🧠 Memory Test</h2>
+        <p>Memorize the glowing boxes in order.</p>
+        <p>Click them in the same order.</p>
+        <p>Each level becomes harder.</p>
+        <button id="memoryStartBtn" class="sys-btn">Start Test</button>
+      </div>
+    </div>
+
+    <div id="memoryGame">
+      <h1>Yuva-4 : Memory Test</h1>
+      <div class="mem-stats">
+        <span id="memLevel">Level: 1</span>
+        <span id="memStreak">Streak: 0</span>
+        <span id="memBest">Best: 0</span>
+        <span id="memTimer">Time: 0.0s</span>
+      </div>
+      <div id="memoryGrid"></div>
+      <div id="memoryReport"></div>
+    </div>
+  </div>
+
+  <audio id="audioClick" src="assets/audio/keyboard.mp3"></audio>
+  <audio id="audioLose" src="assets/audio/lose.mp3"></audio>
+  <audio id="audioWin" src="assets/audio/win.mp3"></audio>
+  <audio id="audioStart" src="assets/audio/start.mp3"></audio>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
